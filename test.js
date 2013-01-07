@@ -3,7 +3,7 @@ var cb = require("codebricks");
 
 
 setupEnvironment(function(err, env) {
-	if (false) {
+	if (true) {
 		env.methods.BrickTypes.getBrick({ id : "httpServer1", deep : true }, function(err, brick) {
 			if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
 				console.log(require("util").inspect(brick, null, null, true));	
