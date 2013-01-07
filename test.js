@@ -4,7 +4,7 @@ var cb = require("codebricks");
 
 setupEnvironment(function(err, env) {
 	if (true) {
-		env.methods.BrickTypes.getBrick({ id : "httpServer1", deep : true }, function(err, brick) {
+		env.methods.BrickTypes.getBrick({ id : "expressServer1", deep : true }, function(err, brick) {
 			if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
 				console.log(require("util").inspect(brick, null, null, true));	
 				brick.start({}, function(err) {
@@ -16,8 +16,8 @@ setupEnvironment(function(err, env) {
 		});
 	} else {		
 		$f(env.methods.BrickTypes)
-			({name:"httpServer"}).createBrick("codebricks.noodle.httpServer")
-			({name:"httpServer"}).createBrick("codebricks.noodle.httpServer")
+			({name:"httpServer"}).createBrick("codebricks.net.httpServer")
+			({name:"httpServer"}).createBrick("codebricks.net.httpServer")
 		.go(function(err, result) {
 			if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
 				var httpServer1 = result.httpServer[0];
