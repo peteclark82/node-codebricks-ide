@@ -12,11 +12,11 @@ var config = {
 
 setupEnvironment(config, function(err, env) {
 	env.methods.BrickTypes.getBrick({ id : "ideServer", depth : true }, function(err, brick) {
-		if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
-			console.log(require("util").inspect(brick, null, null, true));	
+		if (err) { env.log("error", JSON.stringify(err, null, 2)); } else {
+			env.log("data", require("util").inspect(brick, null, null, true));	
 			brick.start({}, function(err) {
-				if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
-					console.log("Running IDE server...");
+				if (err) { env.log("error", JSON.stringify(err, null, 2)); } else {
+					env.log("info", "Running IDE server...");
 				}
 			});
 		}
@@ -27,12 +27,12 @@ function setupEnvironment(options, callback) {
 	cb.createEnvironment({
 		definitions : options.sources
 	}, function(err, env) {
-		if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {		
+		if (err) { env.log("error", JSON.stringify(err, null, 2)); } else {		
 			env.methods.BrickTypes.createBrick(options.repositoryBrickTypeId, function(err, repoBrick) {
-				if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
+				if (err) { env.log("error", JSON.stringify(err, null, 2)); } else {
 					options.setupRepository(repoBrick, function(err) {
 						env.methods.BrickTypes.registerRepository(repoBrick, function(err) {
-							if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
+							if (err) { env.log("error", JSON.stringify(err, null, 2)); } else {
 								callback(null, env);
 							}
 						});

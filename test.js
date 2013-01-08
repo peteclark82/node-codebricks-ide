@@ -4,7 +4,7 @@ var cb = require("codebricks");
 
 setupEnvironment(function(err, env) {
 	if (false) {
-		env.methods.BrickTypes.getBrick({ id : "httpServer1", deep : true }, function(err, brick) {
+		env.methods.BrickTypes.getBrick({ id : "httpServer1", depth : true }, function(err, brick) {
 			if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
 				console.log(require("util").inspect(brick, null, null, true));	
 				console.log("FINSIHED");
@@ -27,7 +27,7 @@ setupEnvironment(function(err, env) {
 				httpServer1.handlers.push(httpServer2);
 				httpServer2.handlers.push(httpServer1);				
 				
-				env.methods.BrickTypes.saveBrick({ brick : httpServer1, deep : true }, function(err) {
+				env.methods.BrickTypes.saveBrick({ brick : httpServer1, depth : true }, function(err) {
 					if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
 						console.log("BRICK SAVED");
 					}
