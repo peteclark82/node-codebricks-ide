@@ -3,15 +3,11 @@ var cb = require("codebricks");
 
 
 setupEnvironment(function(err, env) {
-	if (true) {
-		env.methods.BrickTypes.getBrick({ id : "expressServer1", deep : true }, function(err, brick) {
+	if (false) {
+		env.methods.BrickTypes.getBrick({ id : "httpServer1", deep : true }, function(err, brick) {
 			if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
 				console.log(require("util").inspect(brick, null, null, true));	
-				brick.start({}, function(err) {
-					if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
-						console.log("FINSIHED");
-					}
-				});
+				console.log("FINSIHED");
 			}
 		});
 	} else {		
@@ -29,18 +25,11 @@ setupEnvironment(function(err, env) {
 				httpServer2.port = 9124;
 				
 				httpServer1.handlers.push(httpServer2);
-				httpServer1.something.prop1 = httpServer2;
-				httpServer2.handlers.push(httpServer1);
-				httpServer2.something.deep.deeper.deepProp.myBrick = httpServer1;
+				httpServer2.handlers.push(httpServer1);				
 				
-				
-				httpServer1.start({}, function(err) {
-					if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {							
-						env.methods.BrickTypes.saveBrick({ brick : httpServer1, deep : true }, function(err) {
-							if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
-								console.log("BRICK SAVED");
-							}
-						});
+				env.methods.BrickTypes.saveBrick({ brick : httpServer1, deep : true }, function(err) {
+					if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {
+						console.log("BRICK SAVED");
 					}
 				});
 			}
@@ -50,7 +39,7 @@ setupEnvironment(function(err, env) {
 
 function setupEnvironment(callback) {
 	cb.createEnvironment({
-		definitions : require("noodle").getSources()
+		definitions : require("codebricks-noodle").getSources()
 	}, function(err, env) {
 		if (err) { console.error(JSON.stringify(err, null, 2).bold.red); } else {		
 			console.log("TESTING...");

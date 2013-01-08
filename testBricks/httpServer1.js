@@ -3,8 +3,7 @@
   "handlers": [
     {
       "__": {
-        "id": "expressServer1",
-        "brickTypeId": "codebricks.net.expressServer1"
+        "id": "httpServer2"
       }
     }
   ],

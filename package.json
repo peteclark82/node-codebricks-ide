@@ -9,7 +9,7 @@
   "contributors": [],
   "dependencies": {
     "codebricks": "= 0.0.1",
-		"noodle": "= 0.0.1",
+		"codebricks-noodle": "= 0.0.1",
     "async": "= 0.1.22",
     "colors": "~0.6.0-1",
     "fluid": "~0.1.3"
