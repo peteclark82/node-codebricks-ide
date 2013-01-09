@@ -1,6 +1,6 @@
 {
   "path": {
-		"pattern" : "^/index$",
+		"pattern": "^/index$",
     "flags": ""
   },
   "content": {
