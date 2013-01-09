@@ -1,18 +1,23 @@
 {
   "template": {
     "__": {
-      "id": "templateBasePage"
+      "id": "basePageTemplate"
     }
   },
   "data": {
     "title": {
       "__": {
-        "id": "pageMain_title"
+        "id": "mainPage_title"
+      }
+    },
+		"body": {
+      "__": {
+        "id": "mainPage_body"
       }
     }
   },
   "__": {
-    "id": "pageMain",
+    "id": "mainPage",
     "brickTypeId": "noodle.content.rendered"
   }
 }

@@ -1,7 +1,7 @@
 {
   "value": "The page title!",
   "__": {
-    "id": "pageMain_title",
+    "id": "mainPage_title",
     "brickTypeId": "codebricks.value.string"
   }
 }

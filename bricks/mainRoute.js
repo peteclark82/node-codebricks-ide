@@ -5,11 +5,11 @@
   },
   "content": {
     "__": {
-      "id": "pageMain"
+      "id": "mainPage"
     }
   },
   "__": {
-    "id": "routeMain",
+    "id": "mainRoute",
     "brickTypeId": "codebricks.net.contentRoute"
   }
 }

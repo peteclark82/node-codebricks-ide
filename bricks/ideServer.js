@@ -3,7 +3,7 @@
   "handlers": [
     {
       "__": {
-        "id": "routeMain"
+        "id": "mainRoute"
       }
     }
   ],
