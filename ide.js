@@ -27,8 +27,7 @@ setupEnvironment(config, function(err, options) {
 			brick.start({}, function(err) {
 				if (err) { env.log("error", JSON.stringify(err, null, 2)); } else {
 					env.log("info", "Running IDE server...");
-					repoBricks[1].save({ brick : brick, depth : true }, function(err) {
-						
+					repoBricks[1].save({ brick : brick, depth : true }, function(err) {						
 						if (err) {
 							env.log("error", JSON.stringify(err, null, 2));
 						} else {

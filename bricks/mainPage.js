@@ -12,7 +12,7 @@
     },
 		"body": {
       "__": {
-        "id": "mainPage_body"
+        "id": "brickTree"
       }
     }
   },
