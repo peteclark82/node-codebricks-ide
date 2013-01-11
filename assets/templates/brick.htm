@@ -1,6 +1,7 @@
-<% renderBrick(brickDetail.brick, brickDetail.brickType) %>
+<% renderBrick(brickDetail.brick) %>
 
-<% function renderBrick(brick, brickType) { %>
+<% function renderBrick(brick) { %>
+	<% var brickType = brick.__.brickType %>
 	<li data-brick-type-id='<%= brick.__.brickTypeId %>' data-brick-type-interfaces='<%- brickType ? JSON.stringify(brickType.interfaces) : "" %>' data-list-item-type="brick">
 
 		<span class="brick-id"><%= brick.__.id %></span>
@@ -15,7 +16,7 @@
 							<span class="property-path"><%= propertyPath %> :</span>
 							
 							<% var value = brickType.getPropertyValue(brick, propertyPath) %>
-							<% if (property.type === "codebrick") { %>
+							<% if (property.type === "codebrick" && value !== undefined) { %>
 								<% var childBricks = value instanceof Array ? value : [value] %> 
 								<ul>
 									<% childBricks.forEach(function(childBrick) { %>
