@@ -1,9 +1,14 @@
 {
   "port": 8123,
   "handlers": [
-    {
-      "__": {
+		{
+			"__": {
         "id": "mainRoute"
+      }
+		},
+    {
+			"__": {
+        "id": "brickRoute"
       }
     }
   ],

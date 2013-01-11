@@ -5,6 +5,11 @@
     }
   },
   "placeholders": {
+		"brick": {
+      "__": {
+        "id": "brickTreeTemplate_placeholder_brick"
+      }
+    }
   },
   "__": {
     "id": "brickTreeTemplate",

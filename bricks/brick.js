@@ -1,18 +1,18 @@
 {
 	"template" : {
 		"__" : {
-			"id" : "brickTreeTemplate"
+			"id" : "brickTemplate"
 		}
 	},
-	"data": {
-    "brick": {
+	"data" : {
+		"brickDetail": {
       "__": {
-        "id": "brick"
+        "id": "brick_brickDetail"
       }
     }
-  },
+	},
   "__": {
-    "id": "brickTree",
+    "id": "brick",
     "brickTypeId": "noodle.content.rendered"
   }
 }
