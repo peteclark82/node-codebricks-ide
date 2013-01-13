@@ -1,11 +1,13 @@
 <% renderBrick(brickDetail.brick) %>
 
-<% function renderBrick(brick) { %>
+<% function renderBrick(brick) { %>	
 	<% var brickType = brick.__.brickType %>
+	<% brick = (brick.___ !== undefined) ? brick.___ : brick %>
 	<li data-brick-type-id='<%= brick.__.brickTypeId %>' data-brick-type-interfaces='<%- brickType ? JSON.stringify(brickType.interfaces) : "" %>' data-list-item-type="brick">
 
 		<span class="brick-id"><%= brick.__.id %></span>
-		
+		<span class="brick-type-id">[<%= brick.__.brickTypeId %>]</span>
+			
 		<% if (brickType !== undefined) { %>
 			<% var propertyPaths = Object.keys(brickType.__.properties) %>		
 			<% if (propertyPaths.length > 0) { %>
@@ -13,18 +15,31 @@
 					<% propertyPaths.forEach(function(propertyPath) { %>
 						<% var property = brickType.__.properties[propertyPath] %>
 						<li data-list-item-type="brickProperty" data-brick-property-type-id="<%-property.type%>">
-							<span class="property-path"><%= propertyPath %> :</span>
-							
+							<span class="property-path"><%= propertyPath %></span>
+							<span class="property-type-id">[<%= property.type %> <%=property.mode ? property.mode : "single" %>]</span>
+
 							<% var value = brickType.getPropertyValue(brick, propertyPath) %>
 							<% if (property.type === "codebrick" && value !== undefined) { %>
-								<% var childBricks = value instanceof Array ? value : [value] %> 
-								<ul>
-									<% childBricks.forEach(function(childBrick) { %>
-										<% renderBrick(childBrick) %>
-									<% }) %>
-								<ul>
+								<% if (property.mode == "hash") { %>
+									<% var propertyKeys = Object.keys(value) %>
+									<dl data-list-type="propertyHash">
+										<% propertyKeys.forEach(function(propertyKey) { %>
+											<dt><%= propertyKey %></dt>
+											<dd data-list-type="propertyKeys">
+												<% renderBrick(value[propertyKey]) %>
+											</dd>
+										<% }) %>
+									</dl>
+								<% } else if (value !== undefined) { %>
+									<% var childBricks = property.mode == "array" ? value : [value]; %> 
+									<ul data-list-type="bricks">
+										<% childBricks.forEach(function(childBrick) { %>
+											<% renderBrick(childBrick) %>
+										<% }) %>
+									</ul>
+								<% } %>
 							<% } else { %>
-								<span class="property-value"><%- value %></span>
+								<span class="property-value">= <%- value %></span>
 							<% } %>
 						</li>
 					<% }) %>
