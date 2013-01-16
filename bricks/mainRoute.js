@@ -1,6 +1,10 @@
 {
+  "__": {
+    "id": "mainRoute",
+    "brickTypeId": "codebricks.net.contentRoute"
+  },
   "path": {
-		"pattern": "^/index\\?.+$",
+    "pattern": "^/index\\?.+$",
     "flags": ""
   },
   "content": {
@@ -8,8 +12,9 @@
       "id": "mainPage"
     }
   },
-  "__": {
-    "id": "mainRoute",
-    "brickTypeId": "codebricks.net.contentRoute"
+  "test": {
+    "__": {
+      "id": "ideServer"
+    }
   }
 }

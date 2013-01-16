@@ -1,4 +1,8 @@
 {
+  "__": {
+    "id": "mainPage",
+    "brickTypeId": "noodle.content.rendered"
+  },
   "template": {
     "__": {
       "id": "basePageTemplate"
@@ -10,14 +14,10 @@
         "id": "mainPage_title"
       }
     },
-		"body": {
+    "body": {
       "__": {
         "id": "brickTree"
       }
     }
-  },
-  "__": {
-    "id": "mainPage",
-    "brickTypeId": "noodle.content.rendered"
   }
 }

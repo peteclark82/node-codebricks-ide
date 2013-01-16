@@ -1,4 +1,8 @@
 {
+  "__": {
+    "id": "basePageTemplate",
+    "brickTypeId": "noodle.content.template.qejs"
+  },
   "templateSource": {
     "__": {
       "id": "basePageTemplate_templateSource"
@@ -10,14 +14,10 @@
         "id": "basePageTemplate_placeholder_title"
       }
     },
-		"body": {
+    "body": {
       "__": {
         "id": "basePageTemplate_placeholder_body"
       }
     }
-  },
-  "__": {
-    "id": "basePageTemplate",
-    "brickTypeId": "noodle.content.template.qejs"
   }
 }
