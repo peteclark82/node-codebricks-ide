@@ -3,7 +3,7 @@
     "id": "mainRoute",
     "brickTypeId": "codebricks.net.contentRoute"
   },
-  "path": {
+  "url": {
     "pattern": "^/index\\?.+$",
     "flags": ""
   },

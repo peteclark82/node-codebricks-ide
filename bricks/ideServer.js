@@ -10,6 +10,11 @@
 			"__": {
         "id": "brickRoute"
       }
+    },
+		{
+			"__": {
+        "id": "assetsRoute"
+      }
     }
   ],
   "__": {

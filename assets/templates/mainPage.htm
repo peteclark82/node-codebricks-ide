@@ -1,76 +1,10 @@
 <html>
 	<head>
 		<title><%- title %></title>
-		<style>
-			/* Shared */
-			body {
-				font-family:verdana;
-				font-size:12px;
-			}
-					
-			/* Brick */
-			.brick-id {
-				font-weight:bold;
-			}
-			
-			.brick-type-id {
-				font-style:italic;
-			}
-			
-			.property-type-id { 
-				font-style:italic;
-			}
-			
-			ul[data-list-type="bricks"] {
-				padding:0px;
-				margin:0px;
-				cursor:hand;
-			}
-
-			ul[data-list-type="brickProperties"] {
-				padding:0px 0px 0px 15px;
-				margin:0px;
-				display:none;
-			}
-			
-			li[data-list-item-type='brick'], li[data-list-item-type="brickProperty"] {
-				list-style-type:none;
-			}
-			
-			li[data-list-item-type='brick'] {
-				border:1px solid black;
-				-moz-border-radius: 10px;
-				border-radius: 10px;
-				padding:8px;
-				margin:4px;
-			}
-			
-			dl[data-list-type="propertyHash"] {
-				padding:0px;
-				margin:0px;
-			}
-			
-			dl[data-list-type="propertyHash"] dt, dl[data-list-type="propertyHash"] dd {
-				padding:0px;
-				margin:0px 0px 0px 15px;
-			}
-		</style>
+		<link rel="stylesheet" href="/assets/css/base.css"/>
+		<link rel="stylesheet" href="/assets/css/bubbleGraph.css"/>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-		<script type="text/javascript">
-			$(function() {
-				$("li").dblclick(function(e) {
-					e.preventDefault();
-					console.log("STOPED");
-					return false;
-				});
-				
-				$("li").click(function(e) {
-					e.stopPropagation();
-					var $this = $(this);
-					$this.find("ul,dl").first().toggle();
-				});
-			});
-		</script>
+		<script type="text/javascript" src="/assets/js/bubbleGraph.js"></script>
 	</head>
 	<body>
 		<%- body %>

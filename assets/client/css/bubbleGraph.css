@@ -1,0 +1,46 @@
+/* Brick */
+.brick-id {
+	font-weight:bold;
+}
+
+.brick-type-id {
+	font-style:italic;
+}
+
+.property-type-id { 
+	font-style:italic;
+}
+
+ul[data-list-type="bricks"] {
+	padding:0px;
+	margin:0px;
+	cursor:hand;
+}
+
+ul[data-list-type="brickProperties"] {
+	padding:0px 0px 0px 15px;
+	margin:0px;
+	display:none;
+}
+
+li[data-list-item-type='brick'], li[data-list-item-type="brickProperty"] {
+	list-style-type:none;
+}
+
+li[data-list-item-type='brick'] {
+	border:1px solid black;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding:8px;
+	margin:4px;
+}
+
+dl[data-list-type="propertyHash"] {
+	padding:0px;
+	margin:0px;
+}
+
+dl[data-list-type="propertyHash"] dt, dl[data-list-type="propertyHash"] dd {
+	padding:0px;
+	margin:0px 0px 0px 15px;
+}

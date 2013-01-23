@@ -1,10 +1,9 @@
 <% renderBrick(brickDetail.brick) %>
 
-<% function renderBrick(brick) { %>	
-	<% var brickType = brick.__.brickType %>
+<% function renderBrick(brick) { %>			
 	<% brick = (brick.___ !== undefined) ? brick.___ : brick %>
+	<% var brickType = brick._ ? brick._.brickType : undefined %>
 	<li data-brick-type-id='<%= brick.__.brickTypeId %>' data-brick-type-interfaces='<%- brickType ? JSON.stringify(brickType.interfaces) : "" %>' data-list-item-type="brick">
-
 		<span class="brick-id"><%= brick.__.id %></span>
 		<span class="brick-type-id">[<%= brick.__.brickTypeId %>]</span>
 			
@@ -25,8 +24,8 @@
 									<dl data-list-type="propertyHash">
 										<% propertyKeys.forEach(function(propertyKey) { %>
 											<dt><%= propertyKey %></dt>
-											<dd data-list-type="propertyKeys">
-												<% renderBrick(value[propertyKey]) %>
+											<dd data-list-type="propertyKey">
+												<% if (value[propertyKey]._) { renderBrick(value[propertyKey]); } %>
 											</dd>
 										<% }) %>
 									</dl>
@@ -34,7 +33,7 @@
 									<% var childBricks = property.mode == "array" ? value : [value]; %> 
 									<ul data-list-type="bricks">
 										<% childBricks.forEach(function(childBrick) { %>
-											<% renderBrick(childBrick) %>
+											<% if (childBrick._) { renderBrick(childBrick); } %>
 										<% }) %>
 									</ul>
 								<% } %>

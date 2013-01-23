@@ -7,5 +7,6 @@
     "__": {
       "id": "brick_brickDetail_brickId"
     }
-  }
+  },
+  "depth": 1
 }

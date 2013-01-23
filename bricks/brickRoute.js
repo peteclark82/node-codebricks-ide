@@ -3,7 +3,7 @@
     "id": "brickRoute",
     "brickTypeId": "codebricks.net.contentRoute"
   },
-  "path": {
+  "url": {
     "pattern": "^/brick\\?.+$",
     "flags": ""
   },

@@ -19,25 +19,27 @@ var config = {
 };
 
 setupEnvironment(config, function(err, options) {
-	var env = options.env;
-	var repoBricks = options.repoBricks;
-	env.methods.BrickTypes.getBrick({ id : "ideServer", depth : true }, function(err, brick) {
-		if (err) { env.log("error", JSON.stringify(err, null, 2)); } else {
-			env.log("data", require("util").inspect(brick, null, null, true));	
-			brick.start({}, function(err) {
-				if (err) { env.log("error", JSON.stringify(err, null, 2)); } else {
-					env.log("info", "Running IDE server...");
-					repoBricks[1].save({ brick : brick, depth : true }, function(err) {						
-						if (err) {
-							env.log("error", JSON.stringify(err, null, 2));
-						} else {
-							env.log("info", "Brick SAVED!!!");
-						}
-					});
-				}
-			});
-		}
-	});
+	if (err) { console.error(JSON.stringify(err, null, 2)); } else {
+		var env = options.env;
+		var repoBricks = options.repoBricks;
+		env.methods.BrickTypes.getBrick({ id : "ideServer", batch : { depth : true } }, function(err, brick) {
+			if (err) { env.log("error", JSON.stringify(err, null, 2)); } else {
+				env.log("data", require("util").inspect(brick, null, null, true));	
+				brick.start({}, function(err) {
+					if (err) { env.log("error", JSON.stringify(err, null, 2)); } else {
+						env.log("info", "Running IDE server...");
+						repoBricks[1].save({ brick : brick, batch : { depth : true } }, function(err) {						
+							if (err) {
+								env.log("error", JSON.stringify(err, null, 2));
+							} else {
+								env.log("info", "Brick SAVED!!!");
+							}
+						});
+					}
+				});
+			}
+		});
+	}
 });
 
 function setupEnvironment(options, callback) {
