@@ -44,7 +44,7 @@ setupEnvironment(config, function(err, options) {
 
 function setupEnvironment(options, callback) {
 	cb.createEnvironment({
-		definitions : options.sources
+		sources : options.sources
 	}, function(err, env) {
 		if (err) { console.log("error", JSON.stringify(err, null, 2).red.bold); } else {		
 			var repoBricks = [];

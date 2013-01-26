@@ -1,24 +1,25 @@
 {
+  "__": {
+    "id": "ideServer",
+    "brickTypeId": "codebricks.net.expressServer"
+  },
   "port": 8123,
   "handlers": [
-		{
-			"__": {
+    {
+      "__": {
         "id": "mainRoute"
       }
-		},
+    },
     {
-			"__": {
+      "__": {
         "id": "brickRoute"
       }
     },
-		{
-			"__": {
+    {
+      "__": {
         "id": "assetsRoute"
       }
     }
   ],
-  "__": {
-    "id": "ideServer",
-    "brickTypeId": "codebricks.net.expressServer"
-  }
+  "services": []
 }
